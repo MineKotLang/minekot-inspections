@@ -1,0 +1,89 @@
+public final class org/minekot/inspections/loader/runtime/CachedRulesChannel {
+	public fun <init> ([BLorg/minekot/inspections/loader/ResolvedRulesChannel;)V
+	public final fun component1 ()[B
+	public final fun component2 ()Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+	public final fun copy ([BLorg/minekot/inspections/loader/ResolvedRulesChannel;)Lorg/minekot/inspections/loader/runtime/CachedRulesChannel;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/runtime/CachedRulesChannel;[BLorg/minekot/inspections/loader/ResolvedRulesChannel;ILjava/lang/Object;)Lorg/minekot/inspections/loader/runtime/CachedRulesChannel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIndexBytes ()[B
+	public final fun getResolved ()Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/runtime/ContentAddressedRulesCache {
+	public fun <init> (Ljava/nio/file/Path;)V
+	public final fun cleanup (Ljava/util/Set;Ljava/time/Instant;Ljava/time/Duration;I)I
+	public static synthetic fun cleanup$default (Lorg/minekot/inspections/loader/runtime/ContentAddressedRulesCache;Ljava/util/Set;Ljava/time/Instant;Ljava/time/Duration;IILjava/lang/Object;)I
+	public final fun getRoot ()Ljava/nio/file/Path;
+	public final fun installedManifests ()Ljava/util/List;
+	public final fun leaseVerified (Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesCacheLease;
+	public final fun loadActivation (Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesActivationRecord;
+	public final fun loadVerifiedMetadata (Ljava/lang/String;)Lkotlin/Pair;
+	public final fun promote ([B[BLorg/minekot/inspections/loader/RulesVerificationReceipt;)Lorg/minekot/inspections/loader/RulesCacheLease;
+	public final fun quarantineGeneration (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun recordActivation (Ljava/lang/String;Lorg/minekot/inspections/loader/RulesCachedGeneration;)Lorg/minekot/inspections/loader/RulesActivationRecord;
+}
+
+public final class org/minekot/inspections/loader/runtime/DefaultRulesChannelResolver : org/minekot/inspections/loader/RulesChannelResolver {
+	public static final field HTTP_NOT_MODIFIED I
+	public static final field HTTP_OK I
+	public static final field MAXIMUM_BUNDLE_BYTES J
+	public static final field MAXIMUM_INDEX_BYTES J
+	public fun <init> (Lorg/minekot/inspections/loader/RulesHttpTransport;Lorg/minekot/inspections/loader/RulesIndexSignatureVerifier;Lorg/minekot/inspections/loader/runtime/RulesChannelIndexCache;Ljava/lang/String;)V
+	public synthetic fun <init> (Lorg/minekot/inspections/loader/RulesHttpTransport;Lorg/minekot/inspections/loader/RulesIndexSignatureVerifier;Lorg/minekot/inspections/loader/runtime/RulesChannelIndexCache;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun resolve (Lorg/minekot/inspections/loader/RulesHostDescriptor;Z)Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+}
+
+public final class org/minekot/inspections/loader/runtime/DefaultRulesResolver : org/minekot/inspections/loader/RulesResolver {
+	public fun <init> (Lorg/minekot/inspections/loader/RulesHttpTransport;Lorg/minekot/inspections/loader/RulesSignatureVerifier;Lorg/minekot/inspections/loader/runtime/ContentAddressedRulesCache;Ljava/lang/String;)V
+	public synthetic fun <init> (Lorg/minekot/inspections/loader/RulesHttpTransport;Lorg/minekot/inspections/loader/RulesSignatureVerifier;Lorg/minekot/inspections/loader/runtime/ContentAddressedRulesCache;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun resolve (Lorg/minekot/inspections/loader/RulesReleaseReference;Lorg/minekot/inspections/loader/RulesHostDescriptor;Z)Lorg/minekot/inspections/loader/ResolvedRulesArtifact;
+}
+
+public final class org/minekot/inspections/loader/runtime/RulesArtifactValidator {
+	public static final field INSTANCE Lorg/minekot/inspections/loader/runtime/RulesArtifactValidator;
+	public final fun validate ([BJLjava/lang/String;Ljava/lang/String;)V
+}
+
+public final class org/minekot/inspections/loader/runtime/RulesChannelIndexCache {
+	public static final field ETAG_PATH Ljava/lang/String;
+	public static final field INDEX_DIGEST I
+	public static final field INDEX_PATH Ljava/lang/String;
+	public static final field ISSUER I
+	public static final field RECEIPT_FIELDS I
+	public static final field RECEIPT_PATH Ljava/lang/String;
+	public static final field ROOT_VERSION I
+	public static final field SIGNER_IDENTITY I
+	public static final field VERIFIED_AT I
+	public fun <init> (Ljava/nio/file/Path;)V
+	public final fun getRoot ()Ljava/nio/file/Path;
+	public final fun load ()Lorg/minekot/inspections/loader/runtime/CachedRulesChannel;
+	public final fun promote ([BLorg/minekot/inspections/loader/ResolvedRulesChannel;)V
+}
+
+public final class org/minekot/inspections/loader/runtime/RulesChannelIndexCodec {
+	public static final field INSTANCE Lorg/minekot/inspections/loader/runtime/RulesChannelIndexCodec;
+	public final fun decode ([B)Lorg/minekot/inspections/loader/RulesChannelIndex;
+}
+
+public final class org/minekot/inspections/loader/runtime/RulesManifestCodec {
+	public static final field INSTANCE Lorg/minekot/inspections/loader/runtime/RulesManifestCodec;
+	public static final field MAXIMUM_RULES_JAR_BYTES J
+	public final fun decode ([B)Lorg/minekot/inspections/loader/RulesManifest;
+}
+
+public final class org/minekot/inspections/loader/runtime/SigstoreRulesSignatureVerifier : org/minekot/inspections/loader/RulesIndexSignatureVerifier, org/minekot/inspections/loader/RulesSignatureVerifier {
+	public static final field Companion Lorg/minekot/inspections/loader/runtime/SigstoreRulesSignatureVerifier$Companion;
+	public static final field ISSUER Ljava/lang/String;
+	public static final field SIGNER_IDENTITY Ljava/lang/String;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun verify ([B[BLjava/lang/String;)Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+	public fun verifyIndex ([B[BLjava/lang/String;)Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+}
+
+public final class org/minekot/inspections/loader/runtime/SigstoreRulesSignatureVerifier$Companion {
+}
+

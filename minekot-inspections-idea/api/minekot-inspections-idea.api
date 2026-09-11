@@ -1,0 +1,28 @@
+public final class org/minekot/inspections/idea/MineKotDynamicInspection : com/intellij/codeInspection/LocalInspectionTool {
+	public fun <init> ()V
+	public fun buildVisitor (Lcom/intellij/codeInspection/ProblemsHolder;Z)Lcom/intellij/psi/PsiElementVisitor;
+	public fun getDisplayName ()Ljava/lang/String;
+	public fun getGroupDisplayName ()Ljava/lang/String;
+	public fun getID ()Ljava/lang/String;
+	public fun getShortName ()Ljava/lang/String;
+	public fun getStaticDescription ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/idea/MineKotIdeaInspectionGeneration : java/lang/AutoCloseable {
+	public fun <init> (Ljava/lang/String;Lorg/minekot/inspections/core/MineKotInspectionCatalog;Ljava/util/Map;Lorg/minekot/inspections/core/InspectionMode;Lkotlin/jvm/functions/Function0;)V
+	public synthetic fun <init> (Ljava/lang/String;Lorg/minekot/inspections/core/MineKotInspectionCatalog;Ljava/util/Map;Lorg/minekot/inspections/core/InspectionMode;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun acquire ()Ljava/lang/AutoCloseable;
+	public fun close ()V
+	public final fun getCatalog ()Lorg/minekot/inspections/core/MineKotInspectionCatalog;
+	public final fun getMode ()Lorg/minekot/inspections/core/InspectionMode;
+	public final fun getPolicies ()Ljava/util/Map;
+	public final fun getVersion ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/idea/MineKotIdeaInspectionRegistry {
+	public static final field INSTANCE Lorg/minekot/inspections/idea/MineKotIdeaInspectionRegistry;
+	public final fun activate (Lcom/intellij/openapi/project/Project;Lorg/minekot/inspections/idea/MineKotIdeaInspectionGeneration;)V
+	public final fun active (Lcom/intellij/openapi/project/Project;)Lorg/minekot/inspections/idea/MineKotIdeaInspectionGeneration;
+	public final fun deactivate (Lcom/intellij/openapi/project/Project;)V
+}
+

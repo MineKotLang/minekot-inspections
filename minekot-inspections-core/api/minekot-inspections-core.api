@@ -1,0 +1,496 @@
+public final class org/minekot/inspections/core/CorrectionPlan {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lorg/minekot/inspections/core/CorrectionPlan;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/CorrectionPlan;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/core/CorrectionPlan;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEdits ()Ljava/util/List;
+	public final fun getFileId ()Ljava/lang/String;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getLabel ()Ljava/lang/String;
+	public final fun getSourceSha256 ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class org/minekot/inspections/core/ExplicitOuterReceiverCapability : org/minekot/inspections/core/ResolvedCallCapability {
+	public abstract fun isImplicitOuterReceiver (Lorg/jetbrains/kotlin/psi/KtNameReferenceExpression;)Z
+}
+
+public abstract interface class org/minekot/inspections/core/ExpressionFactsCapability : org/minekot/inspections/core/InspectionCapabilities {
+	public abstract fun expressionFacts (Lorg/jetbrains/kotlin/psi/KtExpression;)Lorg/minekot/inspections/core/InspectionExpressionFacts;
+}
+
+public abstract interface class org/minekot/inspections/core/InspectionCapabilities {
+	public abstract fun supports (Ljava/lang/String;)Z
+}
+
+public final class org/minekot/inspections/core/InspectionCategory : java/lang/Enum {
+	public static final field CODE_STYLE Lorg/minekot/inspections/core/InspectionCategory;
+	public static final field CONCURRENCY Lorg/minekot/inspections/core/InspectionCategory;
+	public static final field CORRECTNESS Lorg/minekot/inspections/core/InspectionCategory;
+	public static final field PERFORMANCE Lorg/minekot/inspections/core/InspectionCategory;
+	public static final field SECURITY Lorg/minekot/inspections/core/InspectionCategory;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionCategory;
+	public static fun values ()[Lorg/minekot/inspections/core/InspectionCategory;
+}
+
+public final class org/minekot/inspections/core/InspectionContext {
+	public fun <init> (Lorg/jetbrains/kotlin/psi/KtFile;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lorg/minekot/inspections/core/InspectionSuppressionResolver;Lorg/minekot/inspections/core/InspectionCapabilities;)V
+	public final fun component1 ()Lorg/jetbrains/kotlin/psi/KtFile;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/util/Map;
+	public final fun component6 ()Lorg/minekot/inspections/core/InspectionSuppressionResolver;
+	public final fun component7 ()Lorg/minekot/inspections/core/InspectionCapabilities;
+	public final fun copy (Lorg/jetbrains/kotlin/psi/KtFile;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lorg/minekot/inspections/core/InspectionSuppressionResolver;Lorg/minekot/inspections/core/InspectionCapabilities;)Lorg/minekot/inspections/core/InspectionContext;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionContext;Lorg/jetbrains/kotlin/psi/KtFile;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lorg/minekot/inspections/core/InspectionSuppressionResolver;Lorg/minekot/inspections/core/InspectionCapabilities;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionContext;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCapabilities ()Lorg/minekot/inspections/core/InspectionCapabilities;
+	public final fun getFile ()Lorg/jetbrains/kotlin/psi/KtFile;
+	public final fun getFileId ()Ljava/lang/String;
+	public final fun getOptions ()Ljava/util/Map;
+	public final fun getSourceSha256 ()Ljava/lang/String;
+	public final fun getSourceText ()Ljava/lang/String;
+	public final fun getSuppressionResolver ()Lorg/minekot/inspections/core/InspectionSuppressionResolver;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionCategory;Lorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionCategory;Lorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Set;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Lorg/minekot/inspections/core/InspectionCategory;
+	public final fun component6 ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun component7 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionCategory;Lorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;)Lorg/minekot/inspections/core/InspectionDescriptor;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionDescriptor;Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionCategory;Lorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionDescriptor;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAliases ()Ljava/util/Set;
+	public final fun getCategory ()Lorg/minekot/inspections/core/InspectionCategory;
+	public final fun getDefaultSeverity ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getDisplayName ()Ljava/lang/String;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getOptions ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionExpressionFacts {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Z
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)Lorg/minekot/inspections/core/InspectionExpressionFacts;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionExpressionFacts;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionExpressionFacts;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActualTypeId ()Ljava/lang/String;
+	public final fun getConstantValue ()Ljava/lang/String;
+	public final fun getExpectedTypeId ()Ljava/lang/String;
+	public final fun getMainThreadContext ()Z
+	public final fun getSuspendContext ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionFinding {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IILorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IILorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()I
+	public final fun component6 ()I
+	public final fun component7 ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun component8 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IILorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;)Lorg/minekot/inspections/core/InspectionFinding;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionFinding;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IILorg/minekot/inspections/core/RuleSeverity;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionFinding;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCorrections ()Ljava/util/List;
+	public final fun getEndOffset ()I
+	public final fun getMessage ()Ljava/lang/String;
+	public final fun getMessageArguments ()Ljava/util/List;
+	public final fun getMessageId ()Ljava/lang/String;
+	public final fun getRuleId ()Ljava/lang/String;
+	public final fun getSeverity ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun getStartOffset ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionMode : java/lang/Enum {
+	public static final field BASELINE Lorg/minekot/inspections/core/InspectionMode;
+	public static final field MAINTAINER Lorg/minekot/inspections/core/InspectionMode;
+	public static final field SCRIPTER Lorg/minekot/inspections/core/InspectionMode;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionMode;
+	public static fun values ()[Lorg/minekot/inspections/core/InspectionMode;
+}
+
+public final class org/minekot/inspections/core/InspectionModelKt {
+	public static final field MINEKOT_INSPECTIONS_SPI_MAJOR I
+}
+
+public abstract interface class org/minekot/inspections/core/InspectionOptionDescriptor {
+	public abstract fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public abstract fun getDescription ()Ljava/lang/String;
+	public abstract fun getKey ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionDescriptor$BooleanOption : org/minekot/inspections/core/InspectionOptionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$BooleanOption;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionDescriptor$BooleanOption;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$BooleanOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;
+	public synthetic fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionDescriptor$EnumOption : org/minekot/inspections/core/InspectionOptionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;Ljava/util/Set;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public final fun component4 ()Ljava/util/Set;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;Ljava/util/Set;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$EnumOption;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionDescriptor$EnumOption;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;Ljava/util/Set;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$EnumOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAllowedValues ()Ljava/util/Set;
+	public fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public synthetic fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionDescriptor$IntegerOption : org/minekot/inspections/core/InspectionOptionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;Ljava/lang/Long;Ljava/lang/Long;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;Ljava/lang/Long;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;
+	public final fun component4 ()Ljava/lang/Long;
+	public final fun component5 ()Ljava/lang/Long;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;Ljava/lang/Long;Ljava/lang/Long;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$IntegerOption;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionDescriptor$IntegerOption;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;Ljava/lang/Long;Ljava/lang/Long;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$IntegerOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;
+	public synthetic fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getKey ()Ljava/lang/String;
+	public final fun getMaximum ()Ljava/lang/Long;
+	public final fun getMinimum ()Ljava/lang/Long;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionDescriptor$ListOption : org/minekot/inspections/core/InspectionOptionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;Lorg/minekot/inspections/core/InspectionOptionType;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;
+	public final fun component4 ()Lorg/minekot/inspections/core/InspectionOptionType;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;Lorg/minekot/inspections/core/InspectionOptionType;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$ListOption;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionDescriptor$ListOption;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;Lorg/minekot/inspections/core/InspectionOptionType;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$ListOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;
+	public synthetic fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getElementType ()Lorg/minekot/inspections/core/InspectionOptionType;
+	public fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionDescriptor$StringOption : org/minekot/inspections/core/InspectionOptionDescriptor {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$StringOption;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionDescriptor$StringOption;Ljava/lang/String;Ljava/lang/String;Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionDescriptor$StringOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public synthetic fun getDefaultValue ()Lorg/minekot/inspections/core/InspectionOptionValue;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getKey ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionType : java/lang/Enum {
+	public static final field BOOLEAN Lorg/minekot/inspections/core/InspectionOptionType;
+	public static final field INTEGER Lorg/minekot/inspections/core/InspectionOptionType;
+	public static final field STRING Lorg/minekot/inspections/core/InspectionOptionType;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionOptionType;
+	public static fun values ()[Lorg/minekot/inspections/core/InspectionOptionType;
+}
+
+public abstract interface class org/minekot/inspections/core/InspectionOptionValue {
+}
+
+public final class org/minekot/inspections/core/InspectionOptionValue$BooleanValue : org/minekot/inspections/core/InspectionOptionValue {
+	public fun <init> (Z)V
+	public final fun component1 ()Z
+	public final fun copy (Z)Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;ZILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionValue$BooleanValue;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionValue$IntegerValue : org/minekot/inspections/core/InspectionOptionValue {
+	public fun <init> (J)V
+	public final fun component1 ()J
+	public final fun copy (J)Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;JILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionValue$IntegerValue;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionValue$ListValue : org/minekot/inspections/core/InspectionOptionValue {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionValue$ListValue;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionOptionValue$StringValue : org/minekot/inspections/core/InspectionOptionValue {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionOptionValue$StringValue;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionPolicy {
+	public fun <init> (ILjava/util/Map;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/util/Map;
+	public final fun copy (ILjava/util/Map;)Lorg/minekot/inspections/core/InspectionPolicy;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionPolicy;ILjava/util/Map;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionPolicy;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getRules ()Ljava/util/Map;
+	public final fun getSchemaVersion ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionPolicyKt {
+	public static final field MINEKOT_INSPECTIONS_POLICY_SCHEMA_VERSION I
+	public static final fun forMode (Lorg/minekot/inspections/core/RuleSeverity;Lorg/minekot/inspections/core/InspectionMode;)Lorg/minekot/inspections/core/RuleSeverity;
+	public static final fun parseInspectionPolicy (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionPolicy;
+	public static final fun resolve (Lorg/minekot/inspections/core/InspectionPolicy;Lorg/minekot/inspections/core/MineKotInspectionCatalog;)Ljava/util/Map;
+}
+
+public abstract interface class org/minekot/inspections/core/InspectionReporter {
+	public abstract fun report (Lorg/minekot/inspections/core/InspectionFinding;)V
+}
+
+public final class org/minekot/inspections/core/InspectionRuleDefaults {
+	public fun <init> ()V
+	public fun <init> (ZLorg/minekot/inspections/core/InspectionRuleLifecycle;Ljava/lang/String;Lorg/minekot/inspections/core/RuleSeverity;)V
+	public synthetic fun <init> (ZLorg/minekot/inspections/core/InspectionRuleLifecycle;Ljava/lang/String;Lorg/minekot/inspections/core/RuleSeverity;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun copy (ZLorg/minekot/inspections/core/InspectionRuleLifecycle;Ljava/lang/String;Lorg/minekot/inspections/core/RuleSeverity;)Lorg/minekot/inspections/core/InspectionRuleDefaults;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionRuleDefaults;ZLorg/minekot/inspections/core/InspectionRuleLifecycle;Ljava/lang/String;Lorg/minekot/inspections/core/RuleSeverity;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionRuleDefaults;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDefaultEnabled ()Z
+	public final fun getLifecycle ()Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+	public final fun getRecommendedSeverity ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun getReplacementRuleId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionRuleLifecycle : java/lang/Enum {
+	public static final field ACTIVE Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+	public static final field DEPRECATED Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+	public static fun values ()[Lorg/minekot/inspections/core/InspectionRuleLifecycle;
+}
+
+public final class org/minekot/inspections/core/InspectionRulePolicy {
+	public fun <init> ()V
+	public fun <init> (ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;)V
+	public synthetic fun <init> (ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun copy (ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;)Lorg/minekot/inspections/core/InspectionRulePolicy;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/InspectionRulePolicy;ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;ILjava/lang/Object;)Lorg/minekot/inspections/core/InspectionRulePolicy;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEnabled ()Z
+	public final fun getOptions ()Ljava/util/Map;
+	public final fun getSeverity ()Lorg/minekot/inspections/core/RuleSeverity;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/InspectionSpiKt {
+	public static final fun loadMineKotInspectionCatalog (Ljava/lang/ClassLoader;)Lorg/minekot/inspections/core/MineKotInspectionCatalog;
+}
+
+public abstract interface class org/minekot/inspections/core/InspectionSuppressionResolver {
+	public abstract fun isSuppressed (Ljava/lang/String;Lorg/jetbrains/kotlin/psi/KtElement;)Z
+}
+
+public final class org/minekot/inspections/core/InspectionValidationKt {
+	public static final fun applyTo (Lorg/minekot/inspections/core/CorrectionPlan;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	public static final fun requireValidCatalog (Lorg/minekot/inspections/core/MineKotInspectionCatalog;)Lorg/minekot/inspections/core/MineKotInspectionCatalog;
+	public static final fun requireValidDescriptor (Lorg/minekot/inspections/core/InspectionDescriptor;)Lorg/minekot/inspections/core/InspectionDescriptor;
+	public static final fun requireValidFinding (Lorg/minekot/inspections/core/InspectionFinding;Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/core/InspectionFinding;
+	public static final fun validateOptions (Lorg/minekot/inspections/core/InspectionDescriptor;Ljava/util/Map;)Ljava/util/Map;
+}
+
+public abstract interface class org/minekot/inspections/core/MineKotInspection {
+	public abstract fun createSession (Lorg/minekot/inspections/core/InspectionContext;)Lorg/minekot/inspections/core/MineKotInspectionSession;
+}
+
+public abstract interface class org/minekot/inspections/core/MineKotInspectionCatalog {
+	public abstract fun createInspection (Ljava/lang/String;)Lorg/minekot/inspections/core/MineKotInspection;
+	public abstract fun getInspections ()Ljava/util/List;
+	public abstract fun getSpiMajor ()I
+}
+
+public abstract interface class org/minekot/inspections/core/MineKotInspectionCatalogDefaults {
+	public abstract fun getRuleDefaults ()Ljava/util/Map;
+}
+
+public abstract interface class org/minekot/inspections/core/MineKotInspectionSession : java/lang/AutoCloseable {
+	public fun close ()V
+	public abstract fun createVisitor (Lorg/minekot/inspections/core/InspectionReporter;)Lorg/jetbrains/kotlin/psi/KtVisitorVoid;
+}
+
+public final class org/minekot/inspections/core/MineKotInspectionSession$DefaultImpls {
+	public static fun close (Lorg/minekot/inspections/core/MineKotInspectionSession;)V
+}
+
+public abstract interface class org/minekot/inspections/core/ResolvedCallCapability : org/minekot/inspections/core/InspectionCapabilities {
+	public abstract fun resolveCall (Lorg/jetbrains/kotlin/psi/KtCallExpression;)Lorg/minekot/inspections/core/ResolvedInspectionCall;
+}
+
+public abstract interface class org/minekot/inspections/core/ResolvedCallDetailsCapability : org/minekot/inspections/core/ResolvedCallCapability {
+	public abstract fun resolveCallDetails (Lorg/jetbrains/kotlin/psi/KtCallExpression;)Lorg/minekot/inspections/core/ResolvedInspectionCallDetails;
+}
+
+public final class org/minekot/inspections/core/ResolvedInspectionCall {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lorg/minekot/inspections/core/ResolvedInspectionCall;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/ResolvedInspectionCall;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/core/ResolvedInspectionCall;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCallableId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/ResolvedInspectionCallDetails {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/Set;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/Set;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/util/List;
+	public final fun component6 ()Ljava/util/List;
+	public final fun component7 ()Ljava/util/Set;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/Set;)Lorg/minekot/inspections/core/ResolvedInspectionCallDetails;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/ResolvedInspectionCallDetails;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/Set;ILjava/lang/Object;)Lorg/minekot/inspections/core/ResolvedInspectionCallDetails;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAnnotationIds ()Ljava/util/Set;
+	public final fun getCallableId ()Ljava/lang/String;
+	public final fun getDispatchReceiverTypeId ()Ljava/lang/String;
+	public final fun getExtensionReceiverTypeId ()Ljava/lang/String;
+	public final fun getParameterNames ()Ljava/util/List;
+	public final fun getParameterTypeIds ()Ljava/util/List;
+	public final fun getReturnTypeId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/ResolvedInspectionRulePolicy {
+	public fun <init> (ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Lorg/minekot/inspections/core/RuleSeverity;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun copy (ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;)Lorg/minekot/inspections/core/ResolvedInspectionRulePolicy;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/ResolvedInspectionRulePolicy;ZLorg/minekot/inspections/core/RuleSeverity;Ljava/util/Map;ILjava/lang/Object;)Lorg/minekot/inspections/core/ResolvedInspectionRulePolicy;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEnabled ()Z
+	public final fun getOptions ()Ljava/util/Map;
+	public final fun getSeverity ()Lorg/minekot/inspections/core/RuleSeverity;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/core/RuleSeverity : java/lang/Enum {
+	public static final field ERROR Lorg/minekot/inspections/core/RuleSeverity;
+	public static final field INFO Lorg/minekot/inspections/core/RuleSeverity;
+	public static final field WARNING Lorg/minekot/inspections/core/RuleSeverity;
+	public static final field WEAK_WARNING Lorg/minekot/inspections/core/RuleSeverity;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/core/RuleSeverity;
+	public static fun values ()[Lorg/minekot/inspections/core/RuleSeverity;
+}
+
+public abstract interface class org/minekot/inspections/core/SymbolAvailabilityCapability : org/minekot/inspections/core/InspectionCapabilities {
+	public abstract fun isSymbolAvailable (Ljava/lang/String;)Z
+}
+
+public final class org/minekot/inspections/core/TextEdit {
+	public fun <init> (IILjava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()I
+	public final fun component2 ()I
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (IILjava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/core/TextEdit;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/core/TextEdit;IILjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/core/TextEdit;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEndOffset ()I
+	public final fun getExpectedText ()Ljava/lang/String;
+	public final fun getReplacement ()Ljava/lang/String;
+	public final fun getStartOffset ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+

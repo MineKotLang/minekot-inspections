@@ -1,0 +1,6 @@
+public final class org/minekot/inspections/detekt/MineKotDetektRuleSetProvider : dev/detekt/api/RuleSetProvider {
+	public fun <init> ()V
+	public fun getRuleSetId ()Ldev/detekt/api/RuleSetId;
+	public fun instance ()Ldev/detekt/api/RuleSet;
+}
+

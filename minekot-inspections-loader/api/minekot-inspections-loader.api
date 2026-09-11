@@ -1,0 +1,335 @@
+public final class org/minekot/inspections/loader/CompatibilityKt {
+	public static final fun compatibilityWith (Lorg/minekot/inspections/loader/RulesManifest;Lorg/minekot/inspections/loader/RulesHostDescriptor;)Lorg/minekot/inspections/loader/RulesCompatibility;
+}
+
+public final class org/minekot/inspections/loader/ResolvedRulesArtifact {
+	public fun <init> (Lorg/minekot/inspections/loader/RulesManifest;Lorg/minekot/inspections/loader/RulesVerificationReceipt;Lorg/minekot/inspections/loader/RulesCacheLease;)V
+	public final fun component1 ()Lorg/minekot/inspections/loader/RulesManifest;
+	public final fun component2 ()Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+	public final fun component3 ()Lorg/minekot/inspections/loader/RulesCacheLease;
+	public final fun copy (Lorg/minekot/inspections/loader/RulesManifest;Lorg/minekot/inspections/loader/RulesVerificationReceipt;Lorg/minekot/inspections/loader/RulesCacheLease;)Lorg/minekot/inspections/loader/ResolvedRulesArtifact;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/ResolvedRulesArtifact;Lorg/minekot/inspections/loader/RulesManifest;Lorg/minekot/inspections/loader/RulesVerificationReceipt;Lorg/minekot/inspections/loader/RulesCacheLease;ILjava/lang/Object;)Lorg/minekot/inspections/loader/ResolvedRulesArtifact;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLease ()Lorg/minekot/inspections/loader/RulesCacheLease;
+	public final fun getManifest ()Lorg/minekot/inspections/loader/RulesManifest;
+	public final fun getReceipt ()Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/ResolvedRulesChannel {
+	public fun <init> (Lorg/minekot/inspections/loader/RulesChannelIndex;Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;Ljava/lang/String;)V
+	public final fun component1 ()Lorg/minekot/inspections/loader/RulesChannelIndex;
+	public final fun component2 ()Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Lorg/minekot/inspections/loader/RulesChannelIndex;Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;Ljava/lang/String;)Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/ResolvedRulesChannel;Lorg/minekot/inspections/loader/RulesChannelIndex;Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEtag ()Ljava/lang/String;
+	public final fun getIndex ()Lorg/minekot/inspections/loader/RulesChannelIndex;
+	public final fun getReceipt ()Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesActivationRecord {
+	public fun <init> (Ljava/lang/String;Lorg/minekot/inspections/loader/RulesCachedGeneration;Lorg/minekot/inspections/loader/RulesCachedGeneration;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public final fun component3 ()Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public final fun copy (Ljava/lang/String;Lorg/minekot/inspections/loader/RulesCachedGeneration;Lorg/minekot/inspections/loader/RulesCachedGeneration;)Lorg/minekot/inspections/loader/RulesActivationRecord;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesActivationRecord;Ljava/lang/String;Lorg/minekot/inspections/loader/RulesCachedGeneration;Lorg/minekot/inspections/loader/RulesCachedGeneration;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesActivationRecord;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActive ()Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public final fun getLastKnownGood ()Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public final fun getScope ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesCacheLease : java/lang/AutoCloseable {
+	public abstract fun getJarPath ()Ljava/nio/file/Path;
+}
+
+public final class org/minekot/inspections/loader/RulesCachedGeneration {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/time/Instant;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;)Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesCachedGeneration;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesCachedGeneration;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActivatedAt ()Ljava/time/Instant;
+	public final fun getJarSha256 ()Ljava/lang/String;
+	public final fun getManifestSha256 ()Ljava/lang/String;
+	public final fun getVersion ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesChannelIndex {
+	public fun <init> (IJLjava/lang/String;Ljava/time/Instant;Ljava/util/List;)V
+	public final fun component1 ()I
+	public final fun component2 ()J
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/time/Instant;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (IJLjava/lang/String;Ljava/time/Instant;Ljava/util/List;)Lorg/minekot/inspections/loader/RulesChannelIndex;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesChannelIndex;IJLjava/lang/String;Ljava/time/Instant;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesChannelIndex;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getGeneratedAt ()Ljava/time/Instant;
+	public final fun getPreviousIndexSha256 ()Ljava/lang/String;
+	public final fun getReleases ()Ljava/util/List;
+	public final fun getSchemaVersion ()I
+	public final fun getSequence ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesChannelModelKt {
+	public static final fun isCompatibleWith (Lorg/minekot/inspections/loader/RulesChannelRelease;Lorg/minekot/inspections/loader/RulesHostDescriptor;)Z
+}
+
+public final class org/minekot/inspections/loader/RulesChannelRelease {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ljava/util/List;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun component4 ()Z
+	public final fun component5 ()Z
+	public final fun component6 ()I
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()I
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/String;Ljava/lang/String;ILjava/util/List;)Lorg/minekot/inspections/loader/RulesChannelRelease;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesChannelRelease;Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/String;Ljava/lang/String;ILjava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesChannelRelease;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getManifestSha256 ()Ljava/lang/String;
+	public final fun getMaximumCoreVersionExclusive ()Ljava/lang/String;
+	public final fun getMinimumCoreVersion ()Ljava/lang/String;
+	public final fun getMinimumJavaVersion ()I
+	public final fun getPrerelease ()Z
+	public final fun getSecurityRevoked ()Z
+	public final fun getSpiMajor ()I
+	public final fun getTestedHosts ()Ljava/util/List;
+	public final fun getVersion ()Ljava/lang/String;
+	public final fun getWithdrawn ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesChannelResolver {
+	public abstract fun resolve (Lorg/minekot/inspections/loader/RulesHostDescriptor;Z)Lorg/minekot/inspections/loader/ResolvedRulesChannel;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesCompatibility {
+}
+
+public final class org/minekot/inspections/loader/RulesCompatibility$Compatible : org/minekot/inspections/loader/RulesCompatibility {
+	public static final field INSTANCE Lorg/minekot/inspections/loader/RulesCompatibility$Compatible;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesCompatibility$Incompatible : org/minekot/inspections/loader/RulesCompatibility {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Lorg/minekot/inspections/loader/RulesCompatibility$Incompatible;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesCompatibility$Incompatible;Ljava/util/List;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesCompatibility$Incompatible;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReasons ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesHostDescriptor {
+	public fun <init> (Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+	public final fun component1 ()Lorg/minekot/inspections/loader/RulesHostType;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()I
+	public final fun component6 ()I
+	public final fun copy (Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/minekot/inspections/loader/RulesHostDescriptor;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesHostDescriptor;Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesHostDescriptor;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCoreVersion ()Ljava/lang/String;
+	public final fun getHostType ()Lorg/minekot/inspections/loader/RulesHostType;
+	public final fun getHostVersion ()Ljava/lang/String;
+	public final fun getJavaVersion ()I
+	public final fun getKotlinVersion ()Ljava/lang/String;
+	public final fun getSpiMajor ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesHostTuple {
+	public fun <init> (Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Lorg/minekot/inspections/loader/RulesHostType;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesHostTuple;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesHostTuple;Lorg/minekot/inspections/loader/RulesHostType;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesHostTuple;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHostType ()Lorg/minekot/inspections/loader/RulesHostType;
+	public final fun getHostVersion ()Ljava/lang/String;
+	public final fun getKotlinVersion ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesHostType : java/lang/Enum {
+	public static final field DETEKT Lorg/minekot/inspections/loader/RulesHostType;
+	public static final field IDEA Lorg/minekot/inspections/loader/RulesHostType;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesHostType;
+	public static fun values ()[Lorg/minekot/inspections/loader/RulesHostType;
+}
+
+public final class org/minekot/inspections/loader/RulesHttpRequest {
+	public fun <init> (Ljava/lang/String;JLjava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;JLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()J
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;JLjava/lang/String;)Lorg/minekot/inspections/loader/RulesHttpRequest;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesHttpRequest;Ljava/lang/String;JLjava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesHttpRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEtag ()Ljava/lang/String;
+	public final fun getMaximumBytes ()J
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesHttpResponse {
+	public fun <init> (I[BLjava/lang/String;Ljava/lang/Long;)V
+	public synthetic fun <init> (I[BLjava/lang/String;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()[B
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/Long;
+	public final fun copy (I[BLjava/lang/String;Ljava/lang/Long;)Lorg/minekot/inspections/loader/RulesHttpResponse;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesHttpResponse;I[BLjava/lang/String;Ljava/lang/Long;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesHttpResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()[B
+	public final fun getEtag ()Ljava/lang/String;
+	public final fun getRetryAfterSeconds ()Ljava/lang/Long;
+	public final fun getStatusCode ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesHttpTransport {
+	public abstract fun get (Lorg/minekot/inspections/loader/RulesHttpRequest;)Lorg/minekot/inspections/loader/RulesHttpResponse;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesIndexSignatureVerifier {
+	public abstract fun verifyIndex ([B[BLjava/lang/String;)Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+}
+
+public final class org/minekot/inspections/loader/RulesIndexVerificationReceipt {
+	public fun <init> (Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/time/Instant;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesIndexVerificationReceipt;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIndexSha256 ()Ljava/lang/String;
+	public final fun getIssuer ()Ljava/lang/String;
+	public final fun getSignerIdentity ()Ljava/lang/String;
+	public final fun getTrustedRootVersion ()Ljava/lang/String;
+	public final fun getVerifiedAt ()Ljava/time/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesManifest {
+	public fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;JLjava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;Ljava/lang/String;I)V
+	public final fun component1 ()I
+	public final fun component10 ()Ljava/lang/String;
+	public final fun component11 ()Ljava/lang/String;
+	public final fun component12 ()I
+	public final fun component13 ()Ljava/lang/String;
+	public final fun component14 ()Ljava/util/List;
+	public final fun component15 ()Ljava/lang/String;
+	public final fun component16 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/time/Instant;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()J
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()I
+	public final fun copy (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;JLjava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;Ljava/lang/String;I)Lorg/minekot/inspections/loader/RulesManifest;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesManifest;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;JLjava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;Ljava/lang/String;IILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesManifest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCatalogProvider ()Ljava/lang/String;
+	public final fun getCommitSha ()Ljava/lang/String;
+	public final fun getConfigurationSchemaVersion ()I
+	public final fun getJarName ()Ljava/lang/String;
+	public final fun getJarSha256 ()Ljava/lang/String;
+	public final fun getJarSize ()J
+	public final fun getKotlinPsiBaseline ()Ljava/lang/String;
+	public final fun getMaximumCoreVersionExclusive ()Ljava/lang/String;
+	public final fun getMinimumCoreVersion ()Ljava/lang/String;
+	public final fun getMinimumJavaVersion ()I
+	public final fun getPublishedAt ()Ljava/time/Instant;
+	public final fun getRulesVersion ()Ljava/lang/String;
+	public final fun getSchemaVersion ()I
+	public final fun getSpiMajor ()I
+	public final fun getTag ()Ljava/lang/String;
+	public final fun getTestedHosts ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/minekot/inspections/loader/RulesReleaseReference {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesReleaseReference;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesReleaseReference;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesReleaseReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getManifestSha256 ()Ljava/lang/String;
+	public final fun getVersion ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesResolver {
+	public abstract fun resolve (Lorg/minekot/inspections/loader/RulesReleaseReference;Lorg/minekot/inspections/loader/RulesHostDescriptor;Z)Lorg/minekot/inspections/loader/ResolvedRulesArtifact;
+}
+
+public abstract interface class org/minekot/inspections/loader/RulesSignatureVerifier {
+	public abstract fun verify ([B[BLjava/lang/String;)Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+}
+
+public final class org/minekot/inspections/loader/RulesVerificationReceipt {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/time/Instant;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+	public static synthetic fun copy$default (Lorg/minekot/inspections/loader/RulesVerificationReceipt;Ljava/lang/String;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lorg/minekot/inspections/loader/RulesVerificationReceipt;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIssuer ()Ljava/lang/String;
+	public final fun getJarSha256 ()Ljava/lang/String;
+	public final fun getManifestSha256 ()Ljava/lang/String;
+	public final fun getSignerIdentity ()Ljava/lang/String;
+	public final fun getTrustedRootVersion ()Ljava/lang/String;
+	public final fun getVerifiedAt ()Ljava/time/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+

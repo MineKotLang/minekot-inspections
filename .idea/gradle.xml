@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/minekot-inspections-core" />
+            <option value="$PROJECT_DIR$/minekot-inspections-detekt" />
+            <option value="$PROJECT_DIR$/minekot-inspections-idea" />
+            <option value="$PROJECT_DIR$/minekot-inspections-loader" />
+            <option value="$PROJECT_DIR$/minekot-inspections-loader-runtime" />
+          </set>
+        </option>
+        <option name="resolveExternalAnnotations" value="true" />
+        <option name="myGradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+      </GradleProjectSettings>
+    </option>
+    <option name="parallelModelFetch" value="true" />
+  </component>
+</project>

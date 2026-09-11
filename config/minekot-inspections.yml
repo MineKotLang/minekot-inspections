@@ -1,0 +1,6 @@
+# Shared MineKot inspection policy
+schema-version: 1
+rules:
+  minekot.codestyle.string-template-braces:
+    enabled: true
+    severity: WARNING

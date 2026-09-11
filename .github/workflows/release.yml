@@ -1,0 +1,132 @@
+# MineKot inspections protected Maven release
+name: Release inspections
+
+on:
+  push:
+    tags:
+      - "v1.*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: inspections-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Verify and publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: production
+    permissions:
+      contents: write
+    env:
+      MINEKOT_MAVEN_PASSWORD: ${{ secrets.MINEKOT_MAVEN_PASSWORD }}
+      MINEKOT_MAVEN_USERNAME: ${{ secrets.MINEKOT_MAVEN_USERNAME }}
+      RELEASE_VERSION: ${{ github.ref_name }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a
+        with:
+          cache-read-only: "false"
+
+      - name: Validate immutable release context
+        shell: bash
+        run: |
+          version="${RELEASE_VERSION#v}"
+          test "${RELEASE_VERSION}" = "v${version}"
+          [[ "${version}" =~ ^1\.[0-9]+\.[0-9]+$ ]]
+          git fetch --no-tags origin master
+          test "${GITHUB_SHA}" = "$(git rev-parse origin/master)"
+          echo "RELEASE_VERSION=${version}" >> "${GITHUB_ENV}"
+
+      - name: Verify release-equivalent build and publications
+        run: >-
+          ./gradlew clean check apiCheck -Pversion="${RELEASE_VERSION}"
+          --warning-mode=fail --no-scan --no-daemon --no-configuration-cache --no-build-cache
+
+      - name: Publish or verify immutable Maven artifacts
+        shell: bash
+        run: |
+          repository="https://maven2.minekot.org/releases"
+          group_path="org/minekot/inspections"
+          modules=(
+            minekot-inspections-core
+            minekot-inspections-detekt
+            minekot-inspections-idea
+            minekot-inspections-loader
+            minekot-inspections-loader-runtime
+          )
+          suffixes=(.pom .jar -sources.jar -javadoc.jar)
+          present=0
+          expected=$((${#modules[@]} * ${#suffixes[@]} + 1))
+          for module in "${modules[@]}"; do
+            for suffix in "${suffixes[@]}"; do
+              url="${repository}/${group_path}/${module}/${RELEASE_VERSION}/${module}-${RELEASE_VERSION}${suffix}"
+              if curl --fail --silent --show-error --location \
+                --user "${MINEKOT_MAVEN_USERNAME}:${MINEKOT_MAVEN_PASSWORD}" \
+                --output /dev/null "${url}"; then
+                present=$((present + 1))
+              fi
+            done
+          done
+          private_module="minekot-inspections-loader-runtime"
+          private_file="${private_module}-${RELEASE_VERSION}-private.jar"
+          private_url="${repository}/${group_path}/${private_module}/${RELEASE_VERSION}/${private_file}"
+          if curl --fail --silent --location \
+            --user "${MINEKOT_MAVEN_USERNAME}:${MINEKOT_MAVEN_PASSWORD}" \
+            --output /dev/null "${private_url}"; then
+            present=$((present + 1))
+          fi
+          if [ "${present}" -ne 0 ] && [ "${present}" -ne "${expected}" ]; then
+            echo "Refusing partial Maven release: found ${present} of ${expected} expected artifacts." >&2
+            exit 1
+          fi
+          if [ "${present}" -eq 0 ]; then
+            ./gradlew publishMineKotPublication -Pversion="${RELEASE_VERSION}" \
+              --warning-mode=fail --no-scan --no-daemon --no-configuration-cache --no-build-cache
+          fi
+          temporary_directory=$(mktemp -d)
+          trap 'rm -rf "${temporary_directory}"' EXIT
+          for module in "${modules[@]}"; do
+            local_directory="build/staged-maven/${group_path}/${module}/${RELEASE_VERSION}"
+            for suffix in "${suffixes[@]}"; do
+              file="${module}-${RELEASE_VERSION}${suffix}"
+              url="${repository}/${group_path}/${module}/${RELEASE_VERSION}/${file}"
+              curl --fail --silent --show-error --location \
+                --user "${MINEKOT_MAVEN_USERNAME}:${MINEKOT_MAVEN_PASSWORD}" \
+                --output "${temporary_directory}/${file}" "${url}"
+              cmp "${local_directory}/${file}" "${temporary_directory}/${file}"
+            done
+          done
+          private_local="build/staged-maven/${group_path}/${private_module}/${RELEASE_VERSION}/${private_file}"
+          curl --fail --silent --show-error --location \
+            --user "${MINEKOT_MAVEN_USERNAME}:${MINEKOT_MAVEN_PASSWORD}" \
+            --output "${temporary_directory}/${private_file}" "${private_url}"
+          cmp "${private_local}" "${temporary_directory}/${private_file}"
+
+      - name: Create immutable GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            exit 0
+          fi
+          gh release create "${GITHUB_REF_NAME}" \
+            --target "${GITHUB_SHA}" \
+            --verify-tag \
+            --generate-notes \
+            --notes "Published to https://maven2.minekot.org/releases. See CHANGELOG.md for details."
