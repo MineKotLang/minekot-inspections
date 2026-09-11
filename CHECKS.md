@@ -1,6 +1,6 @@
 # Inspection infrastructure roadmap
 
-This roadmap owns shared contracts and host adapters. Concrete policy checks and correction behavior belong to [`minekot-rules`](../minekot-rules/CHECKS.md). Gradle execution belongs to `minekot-toolchain`; IntelliJ activation and user experience belong to `minekot-toolkit`.
+This roadmap owns shared contracts and host adapters. Concrete policy checks and correction behavior belong to [`minekot-rules`](https://github.com/MineKotLang/minekot-rules/blob/master/CHECKS.md). Gradle execution belongs to `minekot-toolchain`; IntelliJ activation and user experience belong to `minekot-toolkit`.
 
 ## Core SPI
 

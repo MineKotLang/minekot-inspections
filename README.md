@@ -1,6 +1,6 @@
 # MineKot inspections
 
-`minekot-inspections` provides frozen host-neutral inspection contracts, verified dynamic rule loading, and adapters for Detekt and IntelliJ IDEA. Concrete MineKot checks live in the independently released [`minekot-rules`](../minekot-rules/) repository.
+`minekot-inspections` provides frozen host-neutral inspection contracts, verified dynamic rule loading, and adapters for Detekt and IntelliJ IDEA. Concrete MineKot checks live in the independently released [`minekot-rules`](https://github.com/MineKotLang/minekot-rules) repository.
 
 ## Modules
 
