@@ -1,5 +1,6 @@
 package org.minekot.inspections.loader.runtime
 
+import java.util.*
 import kotlin.test.*
 
 /** Official Sigstore identity-policy boundary tests. */
@@ -27,6 +28,17 @@ class SigstoreRulesSignatureVerifierTest {
                 payload.sha256(),
             )
         }
+    }
+
+    /** Sigstore Java receives the signed SHA-256 digest instead of unhashed payload bytes. */
+    @Test
+    fun `payload is converted to artifact digest`() {
+        val digest = "payload".encodeToByteArray().sha256Bytes()
+
+        assertEquals(
+            "239f59ed55e737c77147cf55ad0c1b030b6d7ee748a7426952f9b852d5a935e5",
+            HexFormat.of().formatHex(digest),
+        )
     }
 
     /** Workflow policy pins repository, workflow file, branch, and GitHub issuer. */

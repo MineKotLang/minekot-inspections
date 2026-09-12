@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Fixed
+
+- Pass SHA-256 artifact digest bytes to `sigstore-java` when verifying standard manifest and stable-index bundles.
+
 ### Features
 
 - Add optional catalog activation/lifecycle defaults plus immutable call, expression, and symbol-availability capabilities without changing frozen v1 constructors.

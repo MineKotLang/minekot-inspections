@@ -52,7 +52,7 @@ public class SigstoreRulesSignatureVerifier(
             .issuer(StringMatcher.string(ISSUER))
             .build()
         val options = VerificationOptions.builder().addCertificateMatchers(matcher).build()
-        KeylessVerifier.builder().sigstorePublicDefaults().build().verify(payload, parsedBundle, options)
+        KeylessVerifier.builder().sigstorePublicDefaults().build().verify(payload.sha256Bytes(), parsedBundle, options)
     }
 
     /** Pinned official workflow identity policy. */

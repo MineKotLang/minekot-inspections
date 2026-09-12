@@ -96,6 +96,9 @@ public object RulesArtifactValidator {
 }
 
 internal fun ByteArray.sha256(): String =
+    sha256Bytes()
+        .joinToString("") { byte -> "%02x".format(byte) }
+
+internal fun ByteArray.sha256Bytes(): ByteArray =
     MessageDigest.getInstance("SHA-256")
         .digest(this)
-        .joinToString("") { byte -> "%02x".format(byte) }
