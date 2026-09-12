@@ -171,8 +171,8 @@ class DefaultRulesResolverTest {
           "minimumCoreVersion":"1.0.0",
           "maximumCoreVersionExclusive":"2.0.0",
           "minimumJavaVersion":21,
-          "kotlinPsiBaseline":"2.4.10",
-          "testedHosts":[{"hostType":"IDEA","hostVersion":"2025.3.5","kotlinVersion":"2.4.10"}],
+          "kotlinPsiBaseline":"2.4.20",
+          "testedHosts":[{"hostType":"IDEA","hostVersion":"2026.1.5","kotlinVersion":"2.4.20"}],
           "catalogProvider":"${CATALOG_PROVIDER}",
           "configurationSchemaVersion":1
         }
@@ -200,6 +200,6 @@ class DefaultRulesResolverTest {
         const val MANIFEST_RESOLUTION_REQUEST_COUNT = 2
         const val FULL_RESOLUTION_REQUEST_COUNT = 3
         val BUNDLE: ByteArray = "bundle".encodeToByteArray()
-        val HOST = RulesHostDescriptor(RulesHostType.IDEA, "2025.3.5", "2.4.10", "1.0.0", 21, 1)
+        val HOST = RulesHostDescriptor(RulesHostType.IDEA, "2026.1.5", "2.4.20", "1.0.0", 21, 1)
     }
 }

@@ -19,6 +19,7 @@ dependencies {
     implementation(project(":minekot-inspections-core"))
     intellijPlatform {
         intellijIdea(libs.versions.idea.version.get())
+        bundledPlugin("com.intellij.java")
         bundledPlugin("org.jetbrains.kotlin")
         testFramework(TestFrameworkType.Platform)
     }

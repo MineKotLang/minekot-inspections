@@ -111,7 +111,7 @@ class DefaultRulesChannelResolverTest {
                 "minimumCoreVersion":"1.0.0",
                 "maximumCoreVersionExclusive":"2.0.0",
                 "minimumJavaVersion":21,
-                "testedHosts":[{"hostType":"IDEA","hostVersion":"2025.3.5","kotlinVersion":"2.4.10"}]
+                "testedHosts":[{"hostType":"IDEA","hostVersion":"2026.1.5","kotlinVersion":"2.4.20"}]
               }]
             }
         """.trimIndent().encodeToByteArray()
@@ -121,6 +121,6 @@ class DefaultRulesChannelResolverTest {
         const val SHA_LENGTH = 64
         const val HTTP_OK = 200
         const val HTTP_NOT_MODIFIED = 304
-        val HOST = RulesHostDescriptor(RulesHostType.IDEA, "2025.3.5", "2.4.10", "1.0.0", 21, 1)
+        val HOST = RulesHostDescriptor(RulesHostType.IDEA, "2026.1.5", "2.4.20", "1.0.0", 21, 1)
     }
 }

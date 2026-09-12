@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Changed
+
+- Update the verified build baseline to Gradle 9.7.1, Kotlin 2.4.20, IntelliJ IDEA 2026.1.5, Detekt 2.0.0-alpha.6, Sigstore Java 2.3.0, kotlinx.serialization 1.11.0, JUnit Platform 6.1.3, and current build plugins. IDEA 2026.2 remains excluded until JetBrains resolves plugin-test startup blocker IJPL-248701.
+
 ### Fixed
 
 - Pass SHA-256 artifact digest bytes to `sigstore-java` when verifying standard manifest and stable-index bundles.

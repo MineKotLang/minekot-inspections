@@ -30,7 +30,7 @@ pluginManagement {
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
     id("org.jetbrains.intellij.platform.settings") version "2.18.1"
-    id("com.gradle.develocity") version "4.3.2"
+    id("com.gradle.develocity") version "4.5.1"
 }
 
 // -------===={ Plugin Configuration }====-------

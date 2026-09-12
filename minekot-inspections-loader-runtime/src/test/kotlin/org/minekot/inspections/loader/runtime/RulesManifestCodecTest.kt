@@ -34,8 +34,8 @@ class RulesManifestCodecTest {
           "minimumCoreVersion":"1.0.0",
           "maximumCoreVersionExclusive":"2.0.0",
           "minimumJavaVersion":21,
-          "kotlinPsiBaseline":"2.4.10",
-          "testedHosts":[{"hostType":"IDEA","hostVersion":"2025.3.5","kotlinVersion":"2.4.10"}],
+          "kotlinPsiBaseline":"2.4.20",
+          "testedHosts":[{"hostType":"IDEA","hostVersion":"2026.1.5","kotlinVersion":"2.4.20"}],
           "catalogProvider":"org.minekot.rules.MineKotRulesCatalog",
           "configurationSchemaVersion":1
         }

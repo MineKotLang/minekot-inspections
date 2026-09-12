@@ -88,7 +88,7 @@ class RulesChannelIndexCodecTest {
             {"version":"${version}","manifestSha256":"${DEFAULT_DIGEST}","prerelease":false,"withdrawn":false,
             "securityRevoked":false,"spiMajor":1,"minimumCoreVersion":"1.0.0",
             "maximumCoreVersionExclusive":"2.0.0","minimumJavaVersion":21,
-            "testedHosts":[{"hostType":"IDEA","hostVersion":"2025.3.5","kotlinVersion":"2.4.10"}]}
+            "testedHosts":[{"hostType":"IDEA","hostVersion":"2026.1.5","kotlinVersion":"2.4.20"}]}
         """.trimIndent()
     }
 
